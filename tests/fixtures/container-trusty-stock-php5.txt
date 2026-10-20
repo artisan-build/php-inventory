@@ -1,0 +1,140 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T20:57:21Z
+
+#### SECTION HOST
+hostname: c3d4e5f6a1b2
+uname_m: x86_64
+uname_r: 6.8.0-60-generic
+uid: 0
+is_root: yes
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Ubuntu"
+osrelease: VERSION="14.04.6 LTS, Trusty Tahr"
+osrelease: ID=ubuntu
+osrelease: ID_LIKE=debian
+osrelease: PRETTY_NAME="Ubuntu 14.04.6 LTS"
+osrelease: VERSION_ID="14.04"
+osrelease: HOME_URL="http://www.ubuntu.com/"
+osrelease: SUPPORT_URL="http://help.ubuntu.com/"
+osrelease: BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+debian_version: jessie/sid
+lsb_codename: trusty
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	libapache2-mod-php5	5.5.9+dfsg-1ubuntu4.29	installed
+dpkg	php5-cli	5.5.9+dfsg-1ubuntu4.29	installed
+dpkg	php5-common	5.5.9+dfsg-1ubuntu4.29	installed
+dpkg	php5-fpm	5.5.9+dfsg-1ubuntu4.29	installed
+dpkg	php5-json	1.3.2-2build1	installed
+dpkg	php5-readline	5.5.9+dfsg-1ubuntu4.29	installed
+
+#### SECTION PKG_ORIGIN
+# where each php cli / fpm / mod_php package actually came from
+package: libapache2-mod-php5
+  installed: 5.5.9+dfsg-1ubuntu4.29
+  candidate: 5.5.9+dfsg-1ubuntu4.29
+  version_entry: 5.5.9+dfsg-1ubuntu4.29+esm15 0
+  origin_selected: 5.5.9+dfsg-1ubuntu4.29 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty-updates/main amd64 Packages
+  origin: 500 http://security.ubuntu.com/ubuntu/ trusty-security/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 5.5.9+dfsg-1ubuntu4 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty/main amd64 Packages
+end_package: libapache2-mod-php5
+package: php5-cli
+  installed: 5.5.9+dfsg-1ubuntu4.29
+  candidate: 5.5.9+dfsg-1ubuntu4.29
+  version_entry: 5.5.9+dfsg-1ubuntu4.29+esm15 0
+  origin_selected: 5.5.9+dfsg-1ubuntu4.29 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty-updates/main amd64 Packages
+  origin: 500 http://security.ubuntu.com/ubuntu/ trusty-security/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 5.5.9+dfsg-1ubuntu4 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty/main amd64 Packages
+end_package: php5-cli
+package: php5-fpm
+  installed: 5.5.9+dfsg-1ubuntu4.29
+  candidate: 5.5.9+dfsg-1ubuntu4.29
+  version_entry: 5.5.9+dfsg-1ubuntu4.29+esm15 0
+  origin_selected: 5.5.9+dfsg-1ubuntu4.29 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty-updates/universe amd64 Packages
+  origin: 500 http://security.ubuntu.com/ubuntu/ trusty-security/universe amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 5.5.9+dfsg-1ubuntu4 0
+  origin: 500 http://archive.ubuntu.com/ubuntu/ trusty/universe amd64 Packages
+end_package: php5-fpm
+
+#### SECTION APT_SOURCES
+# credentials in URIs are replaced with REDACTED before printing
+file: /etc/apt/sources.list
+  deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+  deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+  deb http://archive.ubuntu.com/ubuntu/ trusty universe
+  deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+  deb http://archive.ubuntu.com/ubuntu/ trusty multiverse
+  deb http://archive.ubuntu.com/ubuntu/ trusty-updates multiverse
+  deb http://archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse
+  deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted
+  deb http://security.ubuntu.com/ubuntu/ trusty-security universe
+  deb http://security.ubuntu.com/ubuntu/ trusty-security multiverse
+file: /etc/apt/sources.list.d/planted-cred.list
+  deb https://REDACTED@fake.invalid/ubuntu trusty main
+file: /etc/apt/sources.list.d/ubuntu-esm-infra-trusty.list
+  deb https://esm.ubuntu.com/ubuntu trusty-infra-security main
+  deb https://esm.ubuntu.com/ubuntu trusty-infra-updates main
+dir_listing:
+  planted-cred.list
+  ubuntu-esm-infra-trusty.list
+
+#### SECTION PRO_STATUS
+  SERVICE       AVAILABLE  DESCRIPTION
+  cc-eal        no         Common Criteria EAL2 Provisioning Packages
+  esm-infra     yes        UA Infra: Extended Security Maintenance
+  fips          no         NIST-certified FIPS modules
+  fips-updates  no         Uncertified security updates to FIPS modules
+  livepatch     yes        Canonical Livepatch service
+  
+  This machine is not attached to a UA subscription.
+  See https://ubuntu.com/advantage
+
+#### SECTION PHP_BINARIES
+# every php binary on PATH and in the usual prefixes
+binary: /usr/bin/php
+  realpath: /usr/bin/php5
+  version: PHP 5.5.9-1ubuntu4.29 (cli) (built: Apr 22 2019 18:33:52) 
+  Configure Command => (not reported)
+  Loaded Configuration File => /etc/php5/cli/php.ini
+  modules: bcmath,bz2,calendar,Core,ctype,date,dba,dom,ereg,exif,fileinfo,filter,ftp,gettext,hash,iconv,json,libxml,mbstring,mhash,openssl,pcntl,pcre,PDO,Phar,posix,readline,Reflection,session,shmop,SimpleXML,soap,sockets,SPL,standard,sysvmsg,sysvsem,sysvshm,tokenizer,wddx,xml,xmlreader,xmlwriter,Zend OPcache,zip,zlib,Zend OPcache
+end_binary: /usr/bin/php
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+# no php-fpm master process running
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php5/fpm/pool.d/www.conf	www	/var/run/php5-fpm.sock
+
+#### SECTION APACHE_MODPHP
+  binary: apache2ctl
+  mod: php5_module (shared)
+
+#### SECTION LISTENING
+# listening TCP sockets
+  State      Recv-Q Send-Q        Local Address:Port          Peer Address:Port 
+  LISTEN     0      511                       *:80                       *:*      users:(("apache2",2133,3))
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+# nothing skipped
+
+#### END PHP-INVENTORY
+# written to /tmp/php-inventory-c3d4e5f6a1b2.txt

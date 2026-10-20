@@ -1,0 +1,74 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T09:00:00Z
+
+#### SECTION HOST
+hostname: crm-1.example.com
+uname_m: x86_64
+uname_r: 6.8.0-45-generic
+uid: 0
+is_root: yes
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Ubuntu"
+osrelease: ID=ubuntu
+osrelease: PRETTY_NAME="Ubuntu 24.04.1 LTS"
+osrelease: VERSION_ID="24.04"
+osrelease: VERSION_CODENAME=noble
+osrelease: UBUNTU_CODENAME=noble
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	php7.3-cli	7.3.33-34+ubuntu24.04.1+deb.sury.org+1	installed
+dpkg	php7.3-fpm	7.3.33-34+ubuntu24.04.1+deb.sury.org+1	installed
+
+#### SECTION PKG_ORIGIN
+package: php7.3-fpm
+  installed: 7.3.33-34+ubuntu24.04.1+deb.sury.org+1
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+end_package: php7.3-fpm
+package: php7.3-cli
+  installed: 7.3.33-34+ubuntu24.04.1+deb.sury.org+1
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble/main amd64 Packages
+end_package: php7.3-cli
+
+#### SECTION APT_SOURCES
+file: /etc/apt/sources.list.d/ondrej-ubuntu-php-noble.list
+  deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu noble main
+dir_listing:
+  ondrej-ubuntu-php-noble.list
+
+#### SECTION PRO_STATUS
+  (ubuntu pro client not installed)
+
+#### SECTION PHP_BINARIES
+binary: /usr/bin/php7.3
+  realpath: /usr/bin/php7.3
+  version: PHP 7.3.33 (cli) (built: Oct  1 2026 00:00:00)
+  Configure Command =>  './configure'  '--prefix=/usr'
+  modules: Core,date
+end_binary: /usr/bin/php7.3
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+master	700	root	/usr/sbin/php-fpm7.3	php-fpm: master process (/etc/php/7.3/fpm/php-fpm.conf)
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php/7.3/fpm/pool.d/www.conf	www	127.0.0.1:9000
+
+#### SECTION APACHE_MODPHP
+  (apache not installed)
+
+#### SECTION LISTENING
+  LISTEN 0 511 127.0.0.1:9000 *:*
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# nothing skipped
+
+#### END PHP-INVENTORY

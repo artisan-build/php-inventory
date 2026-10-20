@@ -1,0 +1,173 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T21:02:59Z
+
+#### SECTION HOST
+hostname: b2c3d4e5f6a1
+uname_m: x86_64
+uname_r: 6.8.0-60-generic
+uid: 65534
+is_root: no
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: PRETTY_NAME="Ubuntu 22.04.5 LTS"
+osrelease: NAME="Ubuntu"
+osrelease: VERSION_ID="22.04"
+osrelease: VERSION="22.04.5 LTS (Jammy Jellyfish)"
+osrelease: VERSION_CODENAME=jammy
+osrelease: ID=ubuntu
+osrelease: ID_LIKE=debian
+osrelease: HOME_URL="https://www.ubuntu.com/"
+osrelease: SUPPORT_URL="https://help.ubuntu.com/"
+osrelease: BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+osrelease: PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+osrelease: UBUNTU_CODENAME=jammy
+debian_version: bookworm/sid
+lsb_codename: jammy
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	libapache2-mod-php8.1	8.1.2-1ubuntu2.27	installed
+dpkg	php-common	2:101~+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-cli	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-common	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-fpm	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-json	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-opcache	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php7.4-readline	1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1	installed
+dpkg	php8.1-cli	8.1.2-1ubuntu2.27	installed
+dpkg	php8.1-common	8.1.2-1ubuntu2.27	installed
+dpkg	php8.1-fpm	8.1.2-1ubuntu2.27	installed
+dpkg	php8.1-opcache	8.1.2-1ubuntu2.27	installed
+dpkg	php8.1-readline	8.1.2-1ubuntu2.27	installed
+
+#### SECTION PKG_ORIGIN
+# where each php cli / fpm / mod_php package actually came from
+package: libapache2-mod-php8.1
+  installed: 8.1.2-1ubuntu2.27
+  candidate: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1
+  version_entry: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1 500
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+  origin_selected: 8.1.2-1ubuntu2.27 500
+  origin: 500 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 8.1.2-1ubuntu2.26 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+  version_entry: 8.1.2-1ubuntu2 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+end_package: libapache2-mod-php8.1
+package: php7.4-cli
+  installed: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1
+  candidate: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1
+  origin_selected: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1 500
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+end_package: php7.4-cli
+package: php7.4-fpm
+  installed: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1
+  candidate: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1
+  origin_selected: 1:7.4.33-30+ubuntu22.04.1+deb.sury.org+1 500
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+end_package: php7.4-fpm
+package: php8.1-cli
+  installed: 8.1.2-1ubuntu2.27
+  candidate: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1
+  version_entry: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1 500
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+  origin_selected: 8.1.2-1ubuntu2.27 500
+  origin: 500 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 8.1.2-1ubuntu2.26 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages
+  version_entry: 8.1.2-1ubuntu2 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages
+end_package: php8.1-cli
+package: php8.1-fpm
+  installed: 8.1.2-1ubuntu2.27
+  candidate: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1
+  version_entry: 8.1.34-8+ubuntu22.04.1+deb.sury.org+1 500
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu jammy/main amd64 Packages
+  origin_selected: 8.1.2-1ubuntu2.27 500
+  origin: 500 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages
+  origin: 100 /var/lib/dpkg/status
+  version_entry: 8.1.2-1ubuntu2.26 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages
+  version_entry: 8.1.2-1ubuntu2 500
+  origin: 500 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages
+end_package: php8.1-fpm
+
+#### SECTION APT_SOURCES
+# credentials in URIs are replaced with REDACTED before printing
+file: /etc/apt/sources.list
+  deb http://archive.ubuntu.com/ubuntu/ jammy main restricted
+  deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted
+  deb http://archive.ubuntu.com/ubuntu/ jammy universe
+  deb http://archive.ubuntu.com/ubuntu/ jammy-updates universe
+  deb http://archive.ubuntu.com/ubuntu/ jammy multiverse
+  deb http://archive.ubuntu.com/ubuntu/ jammy-updates multiverse
+  deb http://archive.ubuntu.com/ubuntu/ jammy-backports main restricted universe multiverse
+  deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted
+  deb http://security.ubuntu.com/ubuntu/ jammy-security universe
+  deb http://security.ubuntu.com/ubuntu/ jammy-security multiverse
+file: /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list
+  deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main
+file: /etc/apt/sources.list.d/planted-cred.list
+  deb https://REDACTED@fake.invalid/ubuntu jammy main
+dir_listing:
+  ondrej-ubuntu-php-jammy.list
+  planted-cred.list
+
+#### SECTION PRO_STATUS
+  (ubuntu pro client not installed)
+
+#### SECTION PHP_BINARIES
+# every php binary on PATH and in the usual prefixes
+binary: /bin/php
+  realpath: /usr/bin/php8.1
+  version: PHP 8.1.2-1ubuntu2.27 (cli) (built: Oct 13 2026 18:55:46) (NTS)
+  Configure Command => (not reported)
+  Loaded Configuration File => /etc/php/8.1/cli/php.ini
+  modules: calendar,Core,ctype,date,exif,FFI,fileinfo,filter,ftp,gettext,hash,iconv,json,libxml,openssl,pcntl,pcre,PDO,Phar,posix,readline,Reflection,session,shmop,sockets,sodium,SPL,standard,sysvmsg,sysvsem,sysvshm,tokenizer,Zend OPcache,zlib,Zend OPcache
+end_binary: /bin/php
+binary: /bin/php7.4
+  realpath: /usr/bin/php7.4
+  version: PHP 7.4.33 (cli) (built: Jul  3 2026 06:09:29) ( NTS )
+  Configure Command => (not reported)
+  Loaded Configuration File => /etc/php/7.4/cli/php.ini
+  modules: calendar,Core,ctype,date,exif,FFI,fileinfo,filter,ftp,gettext,hash,iconv,json,libxml,openssl,pcntl,pcre,PDO,Phar,posix,readline,Reflection,session,shmop,sockets,sodium,SPL,standard,sysvmsg,sysvsem,sysvshm,tokenizer,Zend OPcache,zlib,Zend OPcache
+end_binary: /bin/php7.4
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+other	19512	root	(unreadable)	/usr/sbin/php-fpm8.1 --daemonize
+other	19513	www-data	(unreadable)	/usr/sbin/php-fpm8.1 --daemonize
+other	19514	www-data	(unreadable)	/usr/sbin/php-fpm8.1 --daemonize
+# no php-fpm master process running
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php/7.4/fpm/pool.d/www.conf	www	/run/php/php7.4-fpm.sock
+/etc/php/8.1/fpm/pool.d/www.conf	www	/run/php/php8.1-fpm.sock
+
+#### SECTION APACHE_MODPHP
+  binary: apache2ctl
+  mod: php_module (shared)
+
+#### SECTION LISTENING
+# listening TCP sockets
+  State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess
+  LISTEN 0      511          0.0.0.0:80        0.0.0.0:*          
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+FPM_PROCESSES	not root: /proc/<pid>/exe for other users' masters is unreadable, so exe may be blank
+LISTENING	not root: ss cannot name the processes behind other users' sockets
+
+#### END PHP-INVENTORY
+# written to /tmp/php-inventory-b2c3d4e5f6a1-65534.txt

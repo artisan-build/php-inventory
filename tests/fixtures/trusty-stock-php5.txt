@@ -1,0 +1,94 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T09:00:00Z
+
+#### SECTION HOST
+hostname: web-1.example.com
+uname_m: x86_64
+uname_r: 3.13.0-170-generic
+uid: 0
+is_root: yes
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Ubuntu"
+osrelease: VERSION="14.04.6 LTS, Trusty Tahr"
+osrelease: ID=ubuntu
+osrelease: PRETTY_NAME="Ubuntu 14.04.6 LTS"
+osrelease: VERSION_ID="14.04"
+lsb_codename: trusty
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	php5	5.5.9+dfsg-1ubuntu4.29+esm17	installed
+dpkg	php5-cli	5.5.9+dfsg-1ubuntu4.29+esm17	installed
+dpkg	php5-fpm	5.5.9+dfsg-1ubuntu4.29+esm17	installed
+dpkg	libapache2-mod-php5	5.5.9+dfsg-1ubuntu4.29+esm17	installed
+
+#### SECTION PKG_ORIGIN
+package: php5-cli
+  installed: 5.5.9+dfsg-1ubuntu4.29+esm17
+  candidate: 5.5.9+dfsg-1ubuntu4.29+esm17
+  origin_selected: 5.5.9+dfsg-1ubuntu4.29+esm17 500
+  origin: 500 https://esm.ubuntu.com/infra/ubuntu trusty-infra-security/main amd64 Packages
+end_package: php5-cli
+package: php5-fpm
+  installed: 5.5.9+dfsg-1ubuntu4.29+esm17
+  candidate: 5.5.9+dfsg-1ubuntu4.29+esm17
+  origin: 500 https://esm.ubuntu.com/infra/ubuntu trusty-infra-security/main amd64 Packages
+end_package: php5-fpm
+package: libapache2-mod-php5
+  installed: 5.5.9+dfsg-1ubuntu4.29+esm17
+  origin: 500 https://esm.ubuntu.com/infra/ubuntu trusty-infra-security/main amd64 Packages
+end_package: libapache2-mod-php5
+
+#### SECTION APT_SOURCES
+# credentials in URIs are replaced with REDACTED before printing
+file: /etc/apt/sources.list
+  deb http://old-releases.ubuntu.com/ubuntu/ trusty main restricted
+file: /etc/apt/sources.list.d/ubuntu-esm-infra-trusty.list
+  deb https://REDACTED@esm.ubuntu.com/infra/ubuntu trusty-infra-security main
+dir_listing:
+  ubuntu-esm-infra-trusty.list
+
+#### SECTION PRO_STATUS
+  SERVICE       ENTITLED  STATUS    DESCRIPTION
+  esm-infra-legacy  yes   enabled   Expanded Security Maintenance for Infrastructure
+  Account: Example Org
+  Subscription: ubuntu-pro-example
+  Valid until: 2030-01-01
+
+#### SECTION PHP_BINARIES
+binary: /usr/bin/php5
+  realpath: /usr/bin/php5
+  version: PHP 5.5.9-1ubuntu4.29 (cli) (built: Jan  1 2026 00:00:00)
+  Configure Command =>  './configure'  '--with-apxs2=/usr/bin/apxs2'
+  modules: Core,date,json,pcre
+end_binary: /usr/bin/php5
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+master	1211	root	/usr/sbin/php5-fpm	php-fpm: master process (/etc/php5/fpm/php-fpm.conf)
+worker	1212	www-data	/usr/sbin/php5-fpm	php-fpm: pool www
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php5/fpm/pool.d/www.conf	www	/var/run/php5-fpm.sock
+
+#### SECTION APACHE_MODPHP
+  binary: apache2ctl
+  mod: php5_module (shared)
+
+#### SECTION LISTENING
+# listening TCP sockets
+  LISTEN 0 128 *:80 *:*
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+# nothing skipped
+
+#### END PHP-INVENTORY

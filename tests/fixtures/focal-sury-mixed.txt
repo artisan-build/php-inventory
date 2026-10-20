@@ -1,0 +1,89 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T09:00:00Z
+
+#### SECTION HOST
+hostname: app-2.example.com
+uname_m: x86_64
+uname_r: 5.4.0-200-generic
+uid: 0
+is_root: yes
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Ubuntu"
+osrelease: VERSION="20.04.6 LTS (Focal Fossa)"
+osrelease: ID=ubuntu
+osrelease: PRETTY_NAME="Ubuntu 20.04.6 LTS"
+osrelease: VERSION_ID="20.04"
+osrelease: VERSION_CODENAME=focal
+osrelease: UBUNTU_CODENAME=focal
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	php8.3-cli	8.3.11-1+ubuntu20.04.1+deb.sury.org+1	installed
+dpkg	php8.3-fpm	8.3.11-1+ubuntu20.04.1+deb.sury.org+1	installed
+dpkg	php7.4-cli	7.4.3-4ubuntu2.29+esm4	installed
+dpkg	php7.4-fpm	7.4.3-4ubuntu2.29+esm4	installed
+
+#### SECTION PKG_ORIGIN
+package: php8.3-fpm
+  installed: 8.3.11-1+ubuntu20.04.1+deb.sury.org+1
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu focal/main amd64 Packages
+end_package: php8.3-fpm
+package: php8.3-cli
+  installed: 8.3.11-1+ubuntu20.04.1+deb.sury.org+1
+  origin: 500 https://ppa.launchpadcontent.net/ondrej/php/ubuntu focal/main amd64 Packages
+end_package: php8.3-cli
+package: php7.4-fpm
+  installed: 7.4.3-4ubuntu2.29+esm4
+  origin: 500 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+end_package: php7.4-fpm
+package: php7.4-cli
+  installed: 7.4.3-4ubuntu2.29+esm4
+  origin: 500 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages
+end_package: php7.4-cli
+
+#### SECTION APT_SOURCES
+file: /etc/apt/sources.list.d/ondrej-ubuntu-php-focal.list
+  deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu focal main
+dir_listing:
+  ondrej-ubuntu-php-focal.list
+
+#### SECTION PRO_STATUS
+  This machine is not attached to an Ubuntu Pro subscription.
+  See https://ubuntu.com/pro
+
+#### SECTION PHP_BINARIES
+binary: /usr/bin/php8.3
+  realpath: /usr/bin/php8.3
+  version: PHP 8.3.11 (cli) (built: Sep  1 2024 00:00:00) (NTS)
+  Configure Command =>  './configure'  '--prefix=/usr'
+  modules: Core,date,json
+end_binary: /usr/bin/php8.3
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+master	900	root	/usr/sbin/php-fpm8.3	php-fpm: master process (/etc/php/8.3/fpm/php-fpm.conf)
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php/8.3/fpm/pool.d/www.conf	www	/run/php/php8.3-fpm.sock
+/etc/php/7.4/fpm/pool.d/www.conf	www	/run/php/php7.4-fpm.sock
+
+#### SECTION APACHE_MODPHP
+  (apache not installed)
+
+#### SECTION LISTENING
+# listening TCP sockets
+  LISTEN 0 511 *:80 *:*
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+# nothing skipped
+
+#### END PHP-INVENTORY

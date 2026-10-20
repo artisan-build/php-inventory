@@ -1,0 +1,74 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T09:00:00Z
+
+#### SECTION HOST
+hostname: legacy-app-1
+uname_m: x86_64
+uname_r: 4.4.0-210-generic
+uid: 1000
+is_root: no
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Ubuntu"
+osrelease: ID=ubuntu
+osrelease: PRETTY_NAME="Ubuntu 16.04.7 LTS"
+osrelease: VERSION_ID="16.04"
+osrelease: VERSION_CODENAME=xenial
+osrelease: UBUNTU_CODENAME=xenial
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+dpkg	php7.2-cli	7.2.28-1+ubuntu16.04.1+deb.sury.org+1	installed
+dpkg	php7.2-fpm	7.2.28-1+ubuntu16.04.1+deb.sury.org+1	installed
+dpkg	php7.4-fpm	7.4.3-1+ubuntu16.04.1+deb.sury.org+1	installed
+dpkg	php5.6-fpm	5.6.40-1+ubuntu16.04.1+deb.sury.org+1	installed
+
+#### SECTION PKG_ORIGIN
+package: php7.2-fpm
+  installed: 7.2.28-1+ubuntu16.04.1+deb.sury.org+1
+  origin: 500 https://packages.sury.org/php xenial/main amd64 Packages
+end_package: php7.2-fpm
+
+#### SECTION APT_SOURCES
+file: /etc/apt/sources.list.d/php.list
+  deb https://packages.sury.org/php/ xenial main
+dir_listing:
+  php.list
+
+#### SECTION PRO_STATUS
+  This machine is not attached to an Ubuntu Pro subscription.
+
+#### SECTION PHP_BINARIES
+binary: /usr/bin/php7.2
+  realpath: /usr/bin/php7.2
+  version: PHP 7.2.28 (cli) (built: Feb  1 2020 00:00:00)
+  Configure Command => (not reported)
+  modules: Core,date
+end_binary: /usr/bin/php7.2
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+master	640	root	(unreadable)	php-fpm: master process (/etc/php/7.2/fpm/php-fpm.conf)
+
+#### SECTION FPM_POOLS
+/etc/php/7.2/fpm/pool.d/www.conf	www	/run/php/php7.2-fpm.sock
+
+#### SECTION APACHE_MODPHP
+  binary: apache2ctl
+  (module list unavailable -- apache2ctl -M normally needs root)
+
+#### SECTION LISTENING
+  LISTEN 0 128 *:80 *:*
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+APACHE_MODPHP	apache2ctl -M returned nothing; it normally requires root
+FPM_PROCESSES	not root: /proc/<pid>/exe for other users' masters is unreadable, so exe may be blank
+
+#### END PHP-INVENTORY

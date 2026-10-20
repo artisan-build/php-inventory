@@ -1,0 +1,83 @@
+#### BEGIN PHP-INVENTORY
+format_version: 1
+script_version: 1
+generated_at: 2026-10-20T20:56:12Z
+
+#### SECTION HOST
+hostname: a1b2c3d4e5f6
+uname_m: x86_64
+uname_r: 6.8.0-60-generic
+uid: 0
+is_root: yes
+
+#### SECTION OS
+source: /etc/os-release
+osrelease: NAME="Amazon Linux AMI"
+osrelease: VERSION="2018.03"
+osrelease: ID="amzn"
+osrelease: ID_LIKE="rhel fedora"
+osrelease: VERSION_ID="2018.03"
+osrelease: PRETTY_NAME="Amazon Linux AMI 2018.03"
+osrelease: ANSI_COLOR="0;33"
+osrelease: CPE_NAME="cpe:/o:amazon:linux:2018.03:ga"
+osrelease: HOME_URL="http://aws.amazon.com/amazon-linux-ami/"
+system_release: Amazon Linux AMI release 2018.03
+
+#### SECTION PHP_PACKAGES
+# fields: manager<TAB>package<TAB>version<TAB>state
+rpm	php	5.3.29-1.8.amzn1	installed
+rpm	php-cli	5.3.29-1.8.amzn1	installed
+rpm	php-common	5.3.29-1.8.amzn1	installed
+rpm	php-fpm	5.3.29-1.8.amzn1	installed
+
+#### SECTION PKG_ORIGIN
+# where each php cli / fpm / mod_php package actually came from
+# fields: yum<TAB>package<TAB>version<TAB>repo
+yum	php.x86_64	5.3.29-1.8.amzn1	@amzn-main
+yum	php-cli.x86_64	5.3.29-1.8.amzn1	@amzn-main
+yum	php-common.x86_64	5.3.29-1.8.amzn1	@amzn-main
+yum	php-fpm.x86_64	5.3.29-1.8.amzn1	@amzn-main
+
+#### SECTION APT_SOURCES
+# credentials in URIs are replaced with REDACTED before printing
+# /etc/apt does not exist
+
+#### SECTION PRO_STATUS
+  (ubuntu pro client not installed)
+
+#### SECTION PHP_BINARIES
+# every php binary on PATH and in the usual prefixes
+binary: /usr/bin/php
+  realpath: /usr/bin/php
+  version: PHP 5.3.29 (cli) (built: May 12 2015 22:42:19) 
+  Configure Command =>  './configure'  '--build=x86_64-redhat-linux-gnu' '--host=x86_64-redhat-linux-gnu' '--target=x86_64-amazon-linux-gnu' '--program-prefix=' '--prefix=/usr' '--exec-prefix=/usr' '--bindir=/usr/bin' '--sbindir=/usr/sbin' '--sysconfdir=/etc' '--datadir=/usr/share' '--includedir=/usr/include' '--libdir=/usr/lib64' '--libexecdir=/usr/libexec' '--localstatedir=/var' '--sharedstatedir=/var/lib' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--cache-file=../config.cache' '--with-libdir=lib64' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/etc/php.d' '--disable-debug' '--with-pic' '--disable-rpath' '--without-pear' '--with-bz2' '--with-exec-dir=/usr/bin' '--with-freetype-dir=/usr' '--with-png-dir=/usr' '--with-xpm-dir=/usr' '--enable-gd-native-ttf' '--with-t1lib=/usr' '--without-gdbm' '--with-gettext' '--with-gmp' '--with-iconv' '--with-jpeg-dir=/usr' '--with-openssl' '--with-pcre-regex=/usr' '--with-zlib' '--with-layout=GNU' '--enable-exif' '--enable-ftp' '--enable-magic-quotes' '--enable-sockets' '--with-kerberos' '--enable-ucd-snmp-hack' '--enable-shmop' '--enable-calendar' '--without-sqlite' '--with-libxml-dir=/usr' '--enable-xml' '--with-system-tzdata' '--with-mhash' '--enable-force-cgi-redirect' '--libdir=/usr/lib64/php' '--enable-pcntl' '--with-imap=shared' '--with-imap-ssl' '--enable-mbstring=shared' '--enable-mbregex' '--with-gd=shared' '--enable-bcmath=shared' '--enable-dba=shared' '--with-db4=/usr' '--with-xmlrpc=shared' '--with-ldap=shared' '--with-ldap-sasl' '--enable-mysqlnd=shared' '--with-mysql=shared,mysqlnd' '--with-mysqli=shared,mysqlnd' '--enable-dom=shared' '--with-pgsql=shared' '--enable-wddx=shared' '--with-snmp=shared,/usr' '--enable-soap=shared' '--with-xsl=shared,/usr' '--enable-xmlreader=shared' '--enable-xmlwriter=shared' '--with-curl=shared,/usr' '--enable-fastcgi' '--enable-pdo=shared' '--with-pdo-odbc=shared,unixODBC,/usr' '--with-pdo-mysql=shared,mysqlnd' '--with-pdo-pgsql=shared,/usr' '--with-pdo-sqlite=shared,/usr' '--with-pdo-dblib=shared,/usr' '--with-sqlite3=shared,/usr' '--enable-json=shared' '--enable-zip=shared,/usr' '--without-readline' '--with-libedit' '--with-pspell=shared' '--enable-phar=shared' '--with-mcrypt=shared,/usr' '--with-tidy=shared,/usr' '--with-mssql=shared,/usr' '--enable-sysvmsg=shared' '--enable-sysvshm=shared' '--enable-sysvsem=shared' '--enable-posix=shared' '--with-unixODBC=shared,/usr' '--enable-fileinfo=shared' '--enable-intl=shared' '--with-icu-dir=/usr' '--with-enchant=shared,/usr' '--with-recode=shared,/usr'
+  Loaded Configuration File => /etc/php.ini
+  modules: bz2,calendar,Core,ctype,curl,date,ereg,exif,fileinfo,filter,ftp,gettext,gmp,hash,iconv,json,libxml,mhash,openssl,pcntl,pcre,Phar,readline,Reflection,session,shmop,SimpleXML,sockets,SPL,standard,tokenizer,xml,zip,zlib
+end_binary: /usr/bin/php
+
+#### SECTION FPM_PROCESSES
+# fields: role<TAB>pid<TAB>user<TAB>exe<TAB>args
+# no php-fpm master process running
+
+#### SECTION FPM_POOLS
+# fields: conffile<TAB>pool<TAB>listen
+/etc/php-fpm.d/www.conf	www	127.0.0.1:9000
+
+#### SECTION APACHE_MODPHP
+  binary: apachectl
+  mod: php5_module (shared)
+
+#### SECTION LISTENING
+# listening TCP sockets
+  State      Recv-Q Send-Q Local Address:Port               Peer Address:Port              
+  LISTEN     0      128    127.0.0.1:9000                     *:*                   users:(("php-fpm",pid=192,fd=7))
+
+#### SECTION DOCKER
+  (docker not installed)
+
+#### SECTION SKIPPED
+# fields: section<TAB>reason
+# nothing skipped
+
+#### END PHP-INVENTORY
+# written to /tmp/php-inventory-a1b2c3d4e5f6.txt
