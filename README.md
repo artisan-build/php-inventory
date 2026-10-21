@@ -1,38 +1,21 @@
 # php-inventory
 
-Two scripts that answer one question: on this Linux host, what PHP is installed, what is actually
-running, and where did each piece of it come from?
+This script will help you identify what version(s) of PHP are running on your servers, what operating system your server is running, and where your PHP binary came from. It was created in response to the announcement of a critical security vulnerability due to be patched on October 21, 2026. No details were publicly disclosed when the announcement was made that the patch was on its way, but there were indications that version back to 5.4 were impacted.
 
-The last part is what makes it useful. A host running PHP 7.4 might be fully patched, five years
-behind, or unpatchable without compiling it yourself, and the version string looks identical in all
-three cases. What separates them is the repository the package came from.
+This led me to check in with my clients. I know some of them are running some legacy PHP apps on EOL versions of PHP and older Linux distributions. The question I needed to answer for them was whether a patched version of their PHP was going to be available to deploy. The answers turned out to be pretty mixed.
 
-`php-inventory.sh` runs on the host and only reads. `summarize.py` runs on your own machine and
-sorts the reports you collect into patch paths. Neither needs anything installed: `/bin/sh` on the
-host, Python 3 on your machine.
+This may not run everywhere. We built it in response to our own needs. While we tried to make it support as many environments as possible, we were in a hurry. So if you are running a pre-14 version of Ubuntu or some 1990s boutique distribution of Linux, it might not do what you need. But for the vast majority of servers provisioned by hosting providers, it should work fine.
 
 ## Why the origin decides the patch path
 
 PHP 7.4 went end of life upstream in November 2022, and several people kept patching it anyway, on
 different terms.
 
-A package from the Ubuntu archive is Canonical's to fix. While the release is in standard security
-support, `apt upgrade` is the whole job. After that the fix still gets made, but it ships through
-Ubuntu Pro in the `esm-infra` or `esm-infra-legacy` channel, and the host has to be attached before
-it can install anything.
+Some people and organizations build PHP past the end of the official security update period, but they do so for specific environments and on various terms. Some are free, and some are paid products. The original installation channel for PHP on an old server might no longer be the source of a patch for this vulnerability, so figuring out where to source a patched binary for your server becomes your job.
 
-A package from ondrej/sury is Ondřej Surý's to fix, and he builds for current Ubuntu releases. The
-same sury PHP 7.4 on jammy gets a new build when a CVE lands; on focal it does not, because sury
-dropped focal. Nothing on the host announces that this happened.
+The good news is that AI is really good at identifying reliable sources for you. If you can tell your coding agent what your OS is, what version of PHP you're running, and how it was originally installed, it can point you at the best option. The bad news is that sometimes that best option (or only option) is to build it yourself.
 
-An rpm follows its vendor's repository, whether that is `@amzn-main` on an Amazon Linux AMI, one of
-Remi Collet's `remi-php*` repos, or something built in house. The report prints the repository name
-as yum gave it, so you can see which.
-
-A source build has no patch path until somebody makes one.
-
-Two hosts can run the same PHP 7.4.33 where one needs `apt upgrade` and the other needs a compiler,
-a backport branch and a test plan. The version number does not separate them. The origin does.
+The point of this script is to gather the relevant information from all of your servers. Run as root, it gives you everything your coding agent will need. Run without root, and it will still work, but will leave out some details that might be relevant in some situations. Your agent will let you know when it sees the output whether you need to escalate and run it again.
 
 ## What the report covers
 
